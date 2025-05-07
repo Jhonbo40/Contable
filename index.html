@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>JhonBos Contabilidad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="estilo/bootstrap.min.css" rel="stylesheet">
+  <link href="estilo/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <header class="bg-primary text-white p-3 text-center">
+    <img src="img/Logo.png" alt="Logo JhonBos" width="60">
+    <h1 class="d-inline ms-3">JhonBos Contabilidad</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li class="nav-item"><a href="#clientes" class="nav-link">Clientes</a></li>
+          <li class="nav-item"><a href="#equipo" class="nav-link">Equipo</a></li>
+          <li class="nav-item"><a href="#formulario" class="nav-link">Consultas</a></li>
+          <li class="nav-item"><a href="#calculadora" class="nav-link">Impuestos</a></li>
+          <li class="nav-item"><a href="#consulta-nit" class="nav-link">Consulta NIT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="nosotros" class="p-5 bg-light text-center">
+    <div class="container">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos una empresa contable comprometida con brindar soluciones financieras claras, precisas y a tiempo.</p>
+      <img src="img/Oficina.jpg" alt="Oficina" class="img-fluid rounded">
+    </div>
+  </section>
+
+  <section id="clientes" class="p-5 text-center">
+    <div class="container">
+      <h2>Nuestros Clientes</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Cliente 1.png" class="card-img-top" alt="Cliente 1">
+            <div class="card-body">
+              <h5 class="card-title">Laboratorios Delta S.A.</h5>
+              <p class="card-text">Soluciones integrales para el sector industrial.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Cliente 2.png" class="card-img-top" alt="Cliente 2">
+            <div class="card-body">
+              <h5 class="card-title">Automobil Club Boliviano</h5>
+              <p class="card-text">Asesoramiento financiero para ONGs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Cliente 3.jpg" class="card-img-top" alt="Cliente 3">
+            <div class="card-body">
+              <h5 class="card-title">Compañia Cervecera Boliviana</h5>
+              <p class="card-text">Estrategias contables para emprendimientos industriales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" class="p-5 bg-light text-center">
+    <div class="container">
+      <h2>Nuestro Equipo</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <img src="img/Contadora.jpg" class="card-img-top" alt="Contadora">
+            <div class="card-body">
+              <h5 class="card-title">Lic. Andrea Paz</h5>
+              <p class="card-text">Especialista en planificación tributaria.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <img src="img/Auditor.jpg" class="card-img-top" alt="Auditor">
+            <div class="card-body">
+              <h5 class="card-title">Ing. Marco Soto</h5>
+              <p class="card-text">Auditor financiero con más de 10 años de experiencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="p-5 text-center">
+    <div class="container">
+      <h2>Consultas y Suscripciones</h2>
+      <form class="mx-auto" style="max-width: 500px;">
+        <input type="text" class="form-control mb-3" placeholder="Nombre completo" required>
+        <input type="email" class="form-control mb-3" placeholder="Correo electrónico" required>
+        <textarea class="form-control mb-3" placeholder="Escriba su consulta aquí..." rows="4"></textarea>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="calculadora" class="p-5 bg-light text-center">
+    <div class="container">
+      <h2>Calculadora de Impuestos</h2>
+      <p>Ingrese sus datos:</p>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <input type="number" id="ingresos" class="form-control mb-3" placeholder="Ingresos Bs.">
+          <input type="number" id="gastos" class="form-control mb-3" placeholder="Gastos Bs.">
+          <button class="btn btn-success mb-3" onclick="calcularImpuestos()">Calcular</button>
+
+          <div class="alert alert-info text-start d-none" id="resultado">
+            <p><strong>IVA (13%):</strong> <span id="iva"></span> Bs.</p>
+            <p><strong>IT (3%):</strong> <span id="it"></span> Bs.</p>
+            <p><strong>IUE (25% utilidad):</strong> <span id="iue"></span> Bs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consulta-nit" class="p-5 text-center">
+    <div class="container">
+      <h2>Consulta de Fecha de Declaración</h2>
+      <p>Ingrese su NIT para conocer la fecha límite de declaración de impuestos:</p>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <input type="text" id="nit" class="form-control mb-3" placeholder="Ingrese su NIT">
+          <button class="btn btn-primary mb-3" onclick="consultarFecha()">Consultar</button>
+          <div class="alert alert-info d-none" id="fechaResultado"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-primary text-white text-center p-3">
+    <p>&copy; 2025 JhonBos Contabilidad | Síguenos en:
+      <a href="#" class="text-white ms-2">Facebook</a> |
+      <a href="#" class="text-white">LinkedIn</a>
+    </p>
+  </footer>
+
+  <script src="jv/bootstrap.bundle.min.js"></script>
+  <script src="jv/java.js"></script>
+</body>
+</html>
